@@ -66,7 +66,7 @@ async function run() {
         /* --------------End Storage Collection---------------- */
 
 
-        // Monitor/Dell-0
+        // Monitor/Dell
         app.get('/monitor-dells', async (req, res) => {
             const query = {};
             const cursor = MonitorDellCollection.find(query);
@@ -96,7 +96,7 @@ async function run() {
             res.send(Intel);
         });
 
-        //Components/Ram/Adata-0
+        //Components/Ram/Adata
         app.get('/ram-adatas', async (req, res) =>{
             const query = {};
             const cursor = ComponentsRamAdataCollection.find(query);
@@ -126,7 +126,7 @@ async function run() {
             res.send(TPLink);
         });
 
-        // Office Equipment/Printer/HP-0
+        // Office Equipment/Printer/
         app.get('/printer-hps', async (req, res) => {
             const query = {};
             const cursor = OfficeEquipmentPrinterHPCollection.find(query);
@@ -187,7 +187,7 @@ async function run() {
             res.send(keyboardMicropack);
         });
 
-        // Storage/SSD/HP-0
+        // Storage/SSD/HP
         app.get('/ssd-hps', async (req, res) => {
             const query = {};
             const cursor = StorageSSDHPCollection.find(query);
@@ -202,15 +202,15 @@ async function run() {
             res.send(SSDHP);
         });
 
-        //Sound system/Speaker/Digital-X-0
-        app.get('/speaker-digital-Xs', async (req, res) => {
+        //Sound system/Speaker/Digital-X
+        app.get('/speakerDigitalXs', async (req, res) => {
             const query = {};
             const cursor = SoundSystemSpeakerDigitalXCollection.find(query);
             const SpeakerDigitalXs = await cursor.toArray();
             res.send(SpeakerDigitalXs);
         });
 
-        app.get('/speaker-digital-Xs/:id', async (req, res) => {
+        app.get('/speakerDigitalXs/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const SpeakerDigitalX = await SoundSystemSpeakerDigitalXCollection.findOne(query);
